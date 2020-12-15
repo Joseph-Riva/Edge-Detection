@@ -1,1 +1,1 @@
-jupyter nbconvert --to html --output index.html Honors.ipynb
+jupyter nbconvert --to html --output index.html Edge-Detection.ipynb

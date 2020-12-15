@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>Honors</title>
+<title>Edge-Detection</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13172,7 +13172,7 @@ depth: 3
 <p>The image is obviously not three dimensional, so how does it have a depth?</p>
 <p>The depth is the red, green, blue value for each pixel, often abbreviated as rgb. A pixel of your display on your screen is a grid of these rgb values. Any color on the spectrum can be created as a mixture of rgb values.</p>
 <p>In summary, you can imagine an image as a matrix of rgb vectors.</p>
-<p>Below is the color at row 2000, column 3500 which is somewhere in the wing of the butterfly</p>
+<p>Below is the color at row 2000, column 3500 which is somewhere in the wing of the butterfly.</p>
 
 </div>
 </div>
@@ -13292,7 +13292,7 @@ g &amp; h &amp; i \\
 \end{bmatrix}
 $$ with $(0,0)$ starting at the center of the kernel.</p>
 <p>Let's first do an example on a black and white image:</p>
-<p>black and white images are a more simple case because each pixel only has one color value between black(0) and white(255)</p>
+<p>Black and white images are a more simple case because each pixel only has one color value between black(0) and white(255).</p>
 
 </div>
 </div>
@@ -13414,7 +13414,7 @@ $$<p>The new color value for that pixel would be  $\left \lfloor{\frac{sum(r)}{s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#source: https://towardsdatascience.com/edge-detection-in-python-a3c263a13e03</span>
@@ -13440,13 +13440,13 @@ $$<p>The new color value for that pixel would be  $\left \lfloor{\frac{sum(r)}{s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#define the horizontal filter</span>
-<span class="n">horizontal_filter</span> <span class="o">=</span> <span class="p">[[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> 
-                     <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> 
-                     <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]]</span>
+<span class="n">horizontal_filter</span> <span class="o">=</span> <span class="p">[[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> 
+                     <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> 
+                     <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
 </pre></div>
 
     </div>
