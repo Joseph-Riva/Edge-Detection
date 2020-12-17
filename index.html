@@ -14523,8 +14523,8 @@ $$<p>The new color value for that pixel would be  $\left \lfloor{\frac{sum(r)}{s
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Doing edge detection is accomplished by accomplished specific choices for the kernel.</p>
-<p>First, we choose a kernel which will return the derivate in the vertical direction, $G_x$, representing whether the intensity of that region is more concentrated on the top or bottom.</p>
-<p>Next, we choose a kernel which will return the derivate in the horizontal direction, $G_y$, representing whether the intensity of that region is more concentrated on the left or right.</p>
+<p>First, we choose a kernel which will return the derivate in the vertical direction, $G_y$, representing whether the intensity of that region is more concentrated on the top or bottom.</p>
+<p>Next, we choose a kernel which will return the derivate in the horizontal direction, $G_x$, representing whether the intensity of that region is more concentrated on the left or right.</p>
 <p>From these two kernels we can create a gradient for the pixel color at that position. The gradient in this context computes the direction and magnitude of most change. The gradient is made up of a x-direction and a y-direction and is represented as the vector$&lt;G_x, G_y&gt;$.</p>
 <p>It's direction is $\theta=atan(\frac{G_y}{G_x})$</p>
 <p>It's magnitude is $\|G\|= \sqrt{G_x^2+G_y^2}$</p>
@@ -14533,7 +14533,7 @@ $$<p>The new color value for that pixel would be  $\left \lfloor{\frac{sum(r)}{s
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Below is the vertical filter kernel</p>
+<p>Below is the vertical filter kernel, $G_y$:</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -14558,7 +14558,7 @@ $$<p>The new color value for that pixel would be  $\left \lfloor{\frac{sum(r)}{s
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Here is the horizontal filter kernel</p>
+<p>Here is the horizontal filter kernel, $G_x$:</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -14609,7 +14609,7 @@ $$</p>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Now we have to apply the vertical kernel by convolving the vertical kernel, $G_x$, which the region, $r$, notated as $G_x*r$</p>
+<p>Now we have to apply the vertical kernel by convolving the vertical kernel, $G_y$, which the region, $r$, notated as $G_y*r$</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -14633,7 +14633,7 @@ $$</p>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 $$
-G_x*r = 
+G_y*r = 
 \begin{bmatrix}
 -60 &amp; -120 &amp; -62 \\
 0 &amp; 0 &amp; 0 \\
@@ -14646,7 +14646,7 @@ $$<p>$The\:normalized\:vertical\:score = 0.5$</p>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Now we have to apply the horizontal kernel by convolving the horizontal kernel, $G_y$, which the region, $r$, notated as $G_y*r$</p>
+<p>Now we have to apply the horizontal kernel by convolving the horizontal kernel, $G_x$, which the region, $r$, notated as $G_x*r$</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -14670,7 +14670,7 @@ $$<p>$The\:normalized\:vertical\:score = 0.5$</p>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 $$
-G_y*r = 
+G_x*r = 
 \begin{bmatrix}
 -60 &amp; 0 &amp; 62 \\
 -124 &amp; 0 &amp; 124 \\
